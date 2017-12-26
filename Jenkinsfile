@@ -29,7 +29,7 @@ pipeline{
 		    steps{
 			    timeout(time: 5, unit: 'MINUTES'){
 				    // Print Hello to a samp.txt file
-	    		            sh 'echo "I am going to a samp.txt file" > samp.txt'
+	    		            sh 'echo "Hello..I am going to a Hello.txt file" > Hello.txt'
 			    }
 			    sleep 300
 		    }
