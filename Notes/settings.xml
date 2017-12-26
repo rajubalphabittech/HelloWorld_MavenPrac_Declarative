@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<settings xmlns="http://maven.apache.org/SETTINGS/1.0.0"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0
+          http://maven.apache.org/xsd/settings-1.0.0.xsd">
+  <mirrors>
+    <mirror>
+      <id>public</id>
+      <mirrorOf>*</mirrorOf>
+      <url>http://localhost:8081/repository/maven-public/</url>
+    </mirror>
+  </mirrors>
+
+<!-- What should be in here?
+  <proxies>
+    <proxy>
+      <id>myproxy</id>
+      <active>true</active>
+      <protocol>https</protocol>
+      <host>www.fakesitename.com</host>
+      <port>443</port>
+      <nonProxyHosts>127.0.0.1|192.168.0.178</nonProxyHosts>
+    </proxy>
+  </proxies>
+-->
+<servers>
+    <!-- Include a server element for each repository -->
+	<server>
+      <id>releaserepo</id>
+      <username>admin</username>
+      <password>admin123</password>
+    </server>
+	
+	<server>
+      <id>vishwaartifactrepo</id>
+      <username>admin</username>
+      <password>admin123</password>
+    </server>
+</servers>
+  
+  <!--
+  <profiles>
+    <profile>
+      <id>nexus</id>
+      <repositories>
+        <repository>
+          <id>vishwarepo1</id>
+          <url>http://localhost:8081/repository/vishwarepo1/</url>
+          <releases><enabled>true</enabled></releases>
+          <snapshots><enabled>true</enabled></snapshots>
+        </repository>
+      </repositories>
+    </profile>
+  </profiles>
+  <activeProfiles>
+    <activeProfile>nexus</activeProfile>
+  </activeProfiles>
+  -->
+  
+</settings>
