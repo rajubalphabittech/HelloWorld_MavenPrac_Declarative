@@ -1,4 +1,4 @@
-node{
+pipeline{
     def mvnhome = tool 'M3'
     
     /*stage("stage1"){
