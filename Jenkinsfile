@@ -27,7 +27,7 @@ pipeline{
 
 	    stage("stage3"){
 		    steps{
-			    timeout(time: 5, unit: 'MINUTES'){
+			    timeout(time: 3, unit: 'MINUTES'){
 				    // Print Hello to a samp.txt file
 	    		            sh 'echo "Hello..I am going to a Hello.txt file" > Hello.txt'
 			    }
