@@ -3,8 +3,8 @@ Resources:
 https://github.com/jenkinsci/pipeline-model-definition-plugin/wiki/Syntax-Reference 
 */
 pipeline{
-    //def mvnhome = tool 'M3'
-	/* --- agent determines where your build runs ---
+    	/* --- agent determines where your build runs ---
+	
 	"agent any" - Run on any node
 	"agent label:""
 	
@@ -15,7 +15,7 @@ pipeline{
 		docker "ubuntu:latest"
 	}*/
 	
-	agent label:""
+	agent "any"
 	
 	stages{
 	    stage("stage1"){
