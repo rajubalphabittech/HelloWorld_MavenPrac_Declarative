@@ -1,3 +1,7 @@
+/*
+Resources: 
+https://github.com/jenkinsci/pipeline-model-definition-plugin/wiki/Syntax-Reference 
+*/
 pipeline{
     //def mvnhome = tool 'M3'
 	//agent none // agent is a mandatory for declarative pipeline
