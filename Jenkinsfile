@@ -5,8 +5,9 @@ https://github.com/jenkinsci/pipeline-model-definition-plugin/wiki/Syntax-Refere
 pipeline{
     	/* --- agent determines where your build runs ---
 	
-	"agent any" - Run on any node
-	"agent label:""
+	"agent 'any'" - Run on any node
+	"agent none" - Don’t run on a node at all. Manage node blocks yourself within your stages.
+	"agent{ docker 'ubuntu:latest' }" - Run on any node within a Docker container of ubuntu image.
 	
 	*/
 	//agent none // agent is a mandatory for declarative pipeline
@@ -15,7 +16,7 @@ pipeline{
 		docker "ubuntu:latest"
 	}*/
 	
-	agent "any"
+	agent 'any'
 	
 	stages{
 	    stage("stage1"){
