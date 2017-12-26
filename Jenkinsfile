@@ -102,9 +102,10 @@ pipeline{
         input message: 'Do you want to continue?'
     	}
 	}*/
-	
-	stage('stage-Upload-Artifact'){
-		sh "${mvnhome}/bin/mvn deploy:deploy"
-	}
+
+    /*
+     stage('stage-Upload-Artifact'){
+	sh "${mvnhome}/bin/mvn deploy:deploy"
+     }*/
 	
 }
