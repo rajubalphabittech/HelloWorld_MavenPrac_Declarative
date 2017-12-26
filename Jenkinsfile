@@ -35,11 +35,11 @@ pipeline{
 	     		phs2: { sh "echo p2; sleep 40s; echo phase2" }
 			)
 	    	     }
-	    }
 	
-	    //Lines of post block are logged. Not displayed in the pipeline.
-	    post{
-		 always{ echo "I am running after a stage inside a stages block" }
+		    //Lines of post block are logged. Not displayed in the pipeline.
+		    post{
+			 always{ echo "I am running after a stage inside a stages block" }
+		    }
 	    }
 		
 	}
