@@ -3,8 +3,6 @@ pipeline{
 	agent none // agent is a mandatory for declarative pipeline
 	stages{
 	    stage("stage1"){
-		    node{
-		    }
 		    steps{			    
 	    		// Printing using Shell
 	    		sh 'echo "Hello Shell"'
@@ -12,8 +10,6 @@ pipeline{
 	    }
 
 	    stage("stage2"){
-		    node{
-		    }
 		    steps{
 			 //  Print using default Sample step in Pipleine generaiong script
 	    		 echo 'Hello...This message is printed using default Sample Step in Pipeline Script generator'
@@ -21,8 +17,6 @@ pipeline{
 	    }
 
 	    stage("stage3"){
-		    node{
-		    }
 		    steps{
 			  // Print Hello to a samp.txt file
 	    		  sh 'echo "I am going to a samp.txt file" > samp.txt'
