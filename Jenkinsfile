@@ -2,7 +2,7 @@ pipeline{
     def mvnhome = tool 'M3'
 	agent none // agent is a mandatory for declarative pipeline
 	stages{
-	    /*stage("stage1"){
+	    stage("stage1"){
 	    // Printing using Shell
 	    sh 'echo "Hello Shell"'
 	    }
@@ -15,7 +15,7 @@ pipeline{
 	    stage("stage3"){
 	    // Print Hello to a samp.txt file
 	    sh 'echo "I am going to a samp.txt file" > samp.txt'
-	    }*/
+	    }
 
 	    /*
 	    stage('stage-parallel'){
