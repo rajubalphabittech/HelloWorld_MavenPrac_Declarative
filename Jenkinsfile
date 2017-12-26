@@ -41,6 +41,7 @@ pipeline{
 	    }*/
 		
 	}
+}
 	
 	post{		
 		always{	echo "Hi there? I run always irrespective of the build status"	}		
@@ -49,4 +50,4 @@ pipeline{
 		unstable{ echo "I run only if the build is unstable." }		
 		changed{ echo "I run only if the build status of the current build is different from the previous build." }
 	}
-}
+
