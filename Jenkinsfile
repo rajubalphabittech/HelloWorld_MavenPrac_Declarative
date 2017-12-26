@@ -16,7 +16,8 @@ pipeline{
 		docker "ubuntu:latest"
 	}*/
 	
-	agent 'any'
+	//agent 'any'
+	agent{ docker 'ubuntu:latest' }
 	
 	stages{
 	    stage("stage1"){
