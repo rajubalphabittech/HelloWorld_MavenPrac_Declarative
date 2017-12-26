@@ -36,13 +36,16 @@ pipeline{
 			)
 	    	     }
 	    }
-	    /*post{
+	
+	    //Lines of post block are logged. Not displayed in the pipeline.
+	    post{
 		 always{ echo "I am running after a stage inside a stages block" }
-	    }*/
+	    }
 		
 	}
 
 	
+	//Lines of post block are logged. Not displayed in the pipeline.
 	post{		
 		always{	echo "Hi there? I run always irrespective of the build status"	}		
 		success{ echo "I run only if the build is success." }
