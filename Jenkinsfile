@@ -37,4 +37,27 @@ pipeline{
 	    	     }
 	    }	    
 	}
+	
+	post{		
+		always{
+			echo "Hi there? I run always irrespective of the build status"
+		}
+		
+		success{
+			echo "I run only if the build is success."
+		}
+		
+		failure{
+			echo "I run only if the build is failed."
+		}
+		
+		unstable{
+			echo "I run only if the build is unstable."
+		}
+		
+		changed{
+			echo "I run only if the build status of the current build is different from the previous build."
+		}
+		
+	}
 }
