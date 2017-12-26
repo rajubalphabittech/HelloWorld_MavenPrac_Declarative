@@ -1,5 +1,5 @@
 pipeline{
-    def mvnhome = tool 'M3'
+    //def mvnhome = tool 'M3'
 	agent none // agent is a mandatory for declarative pipeline
 	stages{
 	    stage("stage1"){
