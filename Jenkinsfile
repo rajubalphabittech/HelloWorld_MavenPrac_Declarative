@@ -5,7 +5,11 @@ https://github.com/jenkinsci/pipeline-model-definition-plugin/wiki/Syntax-Refere
 pipeline{
     //def mvnhome = tool 'M3'
 	//agent none // agent is a mandatory for declarative pipeline
-	agent any
+	//agent any
+	agent{
+		docker "ubuntu:latest"
+	}
+	
 	stages{
 	    stage("stage1"){
 		    steps{			    
