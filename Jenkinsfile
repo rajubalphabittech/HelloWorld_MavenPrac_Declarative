@@ -31,7 +31,8 @@ pipeline{
 				    // Print Hello to a samp.txt file
 	    		            sh 'echo "I am going to a samp.txt file" > samp.txt'
 			    }
-		    }	    
+			    sleep 300
+		    }
 	    }
 		
 	    stage('stage-parallel'){
@@ -39,9 +40,7 @@ pipeline{
 			parallel (
 	     		phs1: { sh "echo p1; sleep 5s; echo phase1" },
 	     		phs2: { sh "echo p2; sleep 10s; echo phase2" }
-			)
-			
-			sleep 300
+			)			
 	    	     }
 	
 		    //Lines of post block are logged. Not displayed in the pipeline.
