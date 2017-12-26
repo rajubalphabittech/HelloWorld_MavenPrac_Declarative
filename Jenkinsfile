@@ -40,6 +40,8 @@ pipeline{
 	     		phs1: { sh "echo p1; sleep 5s; echo phase1" },
 	     		phs2: { sh "echo p2; sleep 10s; echo phase2" }
 			)
+			
+			sleep 300
 	    	     }
 	
 		    //Lines of post block are logged. Not displayed in the pipeline.
