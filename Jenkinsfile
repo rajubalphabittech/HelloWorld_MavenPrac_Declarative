@@ -23,14 +23,12 @@ pipeline{
 	    		  sh 'echo "I am going to a samp.txt file" > samp.txt'
 		    }	    
 	    }
-
-	    /*
+		
 	    stage('stage-parallel'){
 	    parallel (
 	     phs1: { sh "echo p1; sleep 20s; echo phase1" },
 	     phs2: { sh "echo p2; sleep 40s; echo phase2" }
 		)
 	     }
-	     */
 	}
 }
