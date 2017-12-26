@@ -3,18 +3,24 @@ pipeline{
 	agent none // agent is a mandatory for declarative pipeline
 	stages{
 	    stage("stage1"){
-	    // Printing using Shell
-	    sh 'echo "Hello Shell"'
+		    steps{			    
+	    		// Printing using Shell
+	    		sh 'echo "Hello Shell"'
+		    }
 	    }
 
 	    stage("stage2"){
-	    //  Print using default Sample step in Pipleine generaiong script
-	    echo 'Hello...This message is printed using default Sample Step in Pipeline Script generator'
+		    steps{
+			 //  Print using default Sample step in Pipleine generaiong script
+	    		 echo 'Hello...This message is printed using default Sample Step in Pipeline Script generator'
+		    }
 	    }
 
 	    stage("stage3"){
-	    // Print Hello to a samp.txt file
-	    sh 'echo "I am going to a samp.txt file" > samp.txt'
+		    steps{
+			  // Print Hello to a samp.txt file
+	    		  sh 'echo "I am going to a samp.txt file" > samp.txt'
+		    }	    
 	    }
 
 	    /*
