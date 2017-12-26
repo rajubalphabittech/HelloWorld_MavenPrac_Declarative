@@ -38,7 +38,7 @@ pipeline{
 	
 		    //Lines of post block are logged. Not displayed in the pipeline.
 		    post{
-			 always{ echo "I am running after a stage inside a stages block" }
+			 always{ echo "I am running inside a stages block" }
 		    }
 	    }
 		
