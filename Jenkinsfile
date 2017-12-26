@@ -29,7 +29,7 @@ node{
     // Checkout only Jenkinsfile but not entire files.
     stage('stage-Checkout'){
     // Checkout the code from Git. Use 'git: Git' Sample step
-        git credentialsId: 'git_vishwa-m', url: 'https://github.com/vishwa-m/MavenPrac_HelloWorld_Donot_Delete.git'
+        git credentialsId: 'git_vishwa-m', url: 'https://github.com/vishwa-m/HelloWorld_MavenPrac_Declarative.git'
     }
     
     /*
