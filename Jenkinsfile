@@ -36,9 +36,9 @@ pipeline{
 			)
 	    	     }
 	    }
-	    post{
+	    /*post{
 		 always{ echo "I am running after a stage inside a stages block" }
-	    }
+	    }*/
 		
 	}
 	
