@@ -4,11 +4,18 @@ https://github.com/jenkinsci/pipeline-model-definition-plugin/wiki/Syntax-Refere
 */
 pipeline{
     //def mvnhome = tool 'M3'
+	/* --- agent determines where your build runs ---
+	"agent any" - Run on any node
+	"agent label:""
+	
+	*/
 	//agent none // agent is a mandatory for declarative pipeline
 	//agent any
-	agent{
+	/*agent{
 		docker "ubuntu:latest"
-	}
+	}*/
+	
+	agent label:""
 	
 	stages{
 	    stage("stage1"){
