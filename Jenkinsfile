@@ -28,9 +28,11 @@ pipeline{
 	    // This stage is required still we are building from Jenksfile. Because, while checking out the Jenkinsfile by the Jenkins job.. it will 
 	    // Checkout only Jenkinsfile but not entire files.
 	    stage('stage-Checkout'){
-	    // Checkout the code from Git. Use 'git: Git' Sample step
-		git credentialsId: 'git_vishwa-m', url: 'https://github.com/vishwa-m/HelloWorld_MavenPrac_Declarative.git'
-	    }
+		    steps{
+			    // Checkout the code from Git. Use 'git: Git' Sample step
+		            git credentialsId: 'git_vishwa-m', url: 'https://github.com/vishwa-m/HelloWorld_MavenPrac_Declarative.git'
+		    }
+	     }
 
 	    /*
 	    //This portion is commented as Maven configuration is defined in the beginning.
@@ -39,13 +41,17 @@ pipeline{
 	    }*/
 
 	    stage('stage-Maven-Clean'){
-		//Maven clean. M3 is the name given for Maven installation in Global Tool Configuration
-		sh "${mvnhome}/bin/mvn clean"
+		steps{
+			//Maven clean. M3 is the name given for Maven installation in Global Tool Configuration
+			sh "${mvnhome}/bin/mvn clean"
+		}
 	    }
 
-		stage('stage-maven-java-docs'){
-		//Generate javadocs for src code
-		sh "${mvnhome}/bin/mvn javadoc:javadoc"
+	    stage('stage-maven-java-docs'){
+		 steps{
+			//Generate javadocs for src code
+			sh "${mvnhome}/bin/mvn javadoc:javadoc"
+		 }
 	    }
 
 	    stage('stage-Maven-Compile'){
