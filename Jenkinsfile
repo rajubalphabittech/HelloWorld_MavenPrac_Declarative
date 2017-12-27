@@ -81,7 +81,7 @@ pipeline{
 		    
 		    stage("Clean"){
 			    steps{
-				    maven clean
+				    maven "clean"
 			    }
 		    }
 			
