@@ -27,7 +27,7 @@ pipeline{
 	
 	// Tools - only works when *not* on docker or dockerfile agent
 	tools{
-		maven "M3"
+		maven "M4"
 	}
 		
 	
