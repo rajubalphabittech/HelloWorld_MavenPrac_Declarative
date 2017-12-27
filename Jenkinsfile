@@ -48,7 +48,7 @@ pipeline{
 		    steps{
 			 //  Print using default Sample step in Pipleine generaiong script
 	    		 echo 'Hello...This message is printed using default Sample Step in Pipeline Script generator'
-			 sh echo 'Version is:  '$VERSION
+			    sh "echo Version is:  ${VERSION}"
 		    }
 	    }
 
