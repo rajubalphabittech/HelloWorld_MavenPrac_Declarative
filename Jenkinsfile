@@ -16,20 +16,25 @@ pipeline{
 		docker "ubuntu:latest"
 	}*/
 	
-	//agent 'any'
+	agent 'any'
 	//agent{ docker 'ubuntu:latest' }
-	agent{
+	/*agent{
 		docker{
 			image 'ubuntu:latest'
 			//label 'docker-node'
 		}
-	}
+	}*/
 	
-	// Tools - only works when *not* on docker or dockerfile agent
+	/* Tools - only works when *not* on docker or dockerfile agent */
 	tools{
 		maven "M3" //M3 is the name of the Maven tool configured in Jenkins Global Tool Configuration
 	}
-		
+	
+	/* environment is a block of key = value pairs that will be added to the envionment the build runs in. */
+	environment{
+		VERSION="1.0"
+		ARTIFACT_NAME="Artifact_001"
+	}		
 	
 	stages{
 	    stage("stage1"){
@@ -43,6 +48,7 @@ pipeline{
 		    steps{
 			 //  Print using default Sample step in Pipleine generaiong script
 	    		 echo 'Hello...This message is printed using default Sample Step in Pipeline Script generator'
+			 echo 'Version is: ' ${VERSION}
 		    }
 	    }
 
