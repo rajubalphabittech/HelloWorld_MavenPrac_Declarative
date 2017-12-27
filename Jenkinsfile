@@ -19,8 +19,10 @@ pipeline{
 	//agent 'any'
 	//agent{ docker 'ubuntu:latest' }
 	agent{
-		docker 'ubuntu:latest'
-		label 'docker-node'
+		docker{
+			image 'ubuntu:latest'
+			label 'docker-node'
+		}
 	}
 		
 	
