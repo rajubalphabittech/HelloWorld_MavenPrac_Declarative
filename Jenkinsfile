@@ -26,9 +26,9 @@ pipeline{
 	}*/
 	
 	/* Tools - only works when *not* on docker or dockerfile agent */
-	/*tools{
+	tools{
 		maven "M3" //M3 is the name of the Maven tool configured in Jenkins Global Tool Configuration
-	}*/
+	}
 	
 	/* environment is a block of key = value pairs that will be added to the envionment the build runs in. */
 	environment{
