@@ -3,7 +3,7 @@ Resources:
 https://github.com/jenkinsci/pipeline-model-definition-plugin/wiki/Syntax-Reference 
 */
 pipeline{
-    	/* --- agent determines where your build runs ---
+    	/* --- agent is a mandatory. It determines where your build runs ---
 	
 	"agent 'any'" - Run on any node
 	"agent none" - Don’t run on a node at all. Manage node blocks yourself within your stages.
@@ -18,6 +18,11 @@ pipeline{
 	
 	//agent 'any'
 	//agent{ docker 'ubuntu:latest' }
+	agent{
+		docker 'ubuntu:latest'
+		label 'docker-node'
+	}
+		
 	
 	stages{
 	    stage("stage1"){
