@@ -40,49 +40,57 @@ pipeline{
 	}		
 	
 	stages{
-	    stage("stage1"){
-		    steps{			    
-	    		// Printing using Shell
-	    		sh 'echo "Hello Shell"'
-		    }
-	    }
-
-	    stage("stage2"){
-		    steps{
-			 //  Print using default Sample step in Pipleine generaiong script
-	    		 echo 'Hello...This message is printed using default Sample Step in Pipeline Script generator'
-			 echo "Version is:  ${VERSION}"
-			 echo "Full Name: ${FULLNAME}"
-		    }
-	    }
-
-	    stage("stage3"){
-		    steps{
-			    timeout(time: 3, unit: 'MINUTES'){
-				    // Print Hello to a samp.txt file
-	    		            sh 'echo "Hello..I am going to a Hello.txt file" > Hello.txt'
+		    stage("stage1"){
+			    steps{			    
+				// Printing using Shell
+				sh 'echo "Hello Shell"'
 			    }
 		    }
-	    }
-		
-	    stage('stage-parallel'){
-	    	steps{
-			parallel (
-	     		phs1: { sh "echo p1; sleep 5s; echo phase1" },
-	     		phs2: { sh "echo p2; sleep 10s; echo phase2" }
-			)			
-	    	     }
-	
-		    //Lines of post block are logged. Not displayed in the pipeline.
-		    post{
-			 always{ echo "I am running inside a stages block" }
-		    }
-	    }
-		
-	}
 
+		    stage("stage2"){
+			    steps{
+				 //  Print using default Sample step in Pipleine generaiong script
+				 echo 'Hello...This message is printed using default Sample Step in Pipeline Script generator'
+				 echo "Version is:  ${VERSION}"
+				 echo "Full Name: ${FULLNAME}"
+			    }
+		    }
+
+			    stage("stage3"){
+				    steps{
+					    timeout(time: 3, unit: 'MINUTES'){
+						    // Print Hello to a samp.txt file
+						    sh 'echo "Hello..I am going to a Hello.txt file" > Hello.txt'
+					    }
+				    }
+			    }
+		
+		    stage('stage-parallel'){
+			steps{
+				parallel (
+				phs1: { sh "echo p1; sleep 5s; echo phase1" },
+				phs2: { sh "echo p2; sleep 10s; echo phase2" }
+				)			
+			     }
+
+			    //Lines of post block are logged. Not displayed in the pipeline.
+			    post{
+				 always{ echo "I am running inside a stages block" }
+			    }
+		    }
+		    
+		    stage("Clean"){
+			    steps{
+				    maven clean
+			    }
+		    }
+			
+	}
 	
-	//Lines of post block are logged. Not displayed in the pipeline.
+	/*
+	Post block shouldn't be in a separate stage. Lines of post block are logged. 
+	Steps inside post blcok aren't displayed in the pipeline.
+	*/
 	post{		
 		always{	echo "Hi there? I run always irrespective of the build status"	}		
 		success{ echo "I run only if the build is success." }
