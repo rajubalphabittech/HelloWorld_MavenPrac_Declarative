@@ -27,7 +27,7 @@ pipeline{
 	
 	// Tools - only works when *not* on docker or dockerfile agent
 	tools{
-		maven "M4"
+		maven "M3" //M3 is the name of the Maven tool configured in Jenkins Global Tool Configuration
 	}
 		
 	
@@ -52,7 +52,6 @@ pipeline{
 				    // Print Hello to a samp.txt file
 	    		            sh 'echo "Hello..I am going to a Hello.txt file" > Hello.txt'
 			    }
-			    sleep 300
 		    }
 	    }
 		
