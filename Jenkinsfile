@@ -24,6 +24,11 @@ pipeline{
 			//label 'docker-node'
 		}
 	}
+	
+	// Tools - only works when *not* on docker or dockerfile agent
+	tools{
+		maven "M3"
+	}
 		
 	
 	stages{
