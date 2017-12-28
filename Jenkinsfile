@@ -47,7 +47,10 @@ pipeline{
 			    */
 			    steps{			    
 				// Printing using Shell
-				sh 'echo "Hello Shell"'
+				sh "echo Hello Shell"
+				
+				// Printing using Batch
+				bat "echo Hello Batch"
 			    }
 		    }
 
@@ -73,6 +76,11 @@ pipeline{
 		    }
 		
 		    stage("stage4"){
+			tools{
+				// Define the tools to be override the global tools defined.
+			}
+			    
+			    
 			/*
 			stage block should contain atmost one and only one when block. It shouldn't be located inside steps block.
 			*/
@@ -135,7 +143,7 @@ pipeline{
 			echo "Hi there? I run always irrespective of the build status"
 			
 			/* Wipeout the workspace after every build */
-			deleteDir()
+			deleteDir()// Not working
 		}		
 	}
 	
