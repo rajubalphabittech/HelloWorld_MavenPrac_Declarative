@@ -79,6 +79,10 @@ pipeline{
 			steps{
 				sh "echo the branch is not master" 
 			}
+			
+			steps{
+				sh "echo After when block this is the second steps block" 
+			}
 		    }
 		
 		    stage('stage-parallel'){
