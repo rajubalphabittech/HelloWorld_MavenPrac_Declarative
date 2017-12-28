@@ -75,27 +75,16 @@ pipeline{
 				/* One and only-one condition is allowed */
 				
 				// Check the branch is master
-				branch "not-master"
+				branch "master"
 				
 				// check the environment variable "FIRSTNAME" has the value "Vish"
 				environment name: "FIRSTNAME", value: "Vish"
 			}
 			
 			steps{
-				sh "echo the branch is not master"
+				sh "echo the branch is master"
 				sh "echo FIRSTNAME has Vish as value"
-			}
-			
-			/*
-			when{
-				// check the environment variable "FIRSTNAME" has the value "Vish"
-				environment name: "FIRSTNAME", value: "Vish"
-			}
-			
-			steps{
-				sh "echo FIRSTNAME has Vish as value" 
-			}
-			*/
+			}			
 		    }
 		
 		    stage('stage-parallel'){
