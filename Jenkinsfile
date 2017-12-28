@@ -82,13 +82,14 @@ pipeline{
 				
 				//Expressions. Only run if the expression doesn't return false/null.
 				expression{
-					return "foo"!="foo"
+					return 3>2
 				}
 			}
 			
 			steps{
 				sh "echo the branch is master"
 				sh "echo Environment variable, FIRSTNAME has Vish as value"
+				sh "echo expression satisfied"
 			}			
 		    }
 		
