@@ -25,6 +25,8 @@ pipeline{
 		}
 	}*/
 	
+	def job_list = ['job 1', 'job 2']
+	
 	/* Tools - only works when *not* on docker or dockerfile agent */
 	tools{
 		maven "M3" //M3 is the name of the Maven tool configured in Jenkins Global Tool Configuration
