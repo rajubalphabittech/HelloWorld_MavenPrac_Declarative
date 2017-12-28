@@ -41,6 +41,7 @@ pipeline{
 	
 	stages{
 		    stage("stage1"){
+			    //stage block should contain one and only one steps block
 			    steps{			    
 				// Printing using Shell
 				sh 'echo "Hello Shell"'
@@ -69,17 +70,23 @@ pipeline{
 		    }
 		
 		stage("stage4"){
+			//stage block should contain atmost one and only one when block. 
 			when{
 				/* One and only-one condition is allowed */
 				
 				// Check the branch is master
 				branch "not-master"
+				
+				// check the environment variable "FIRSTNAME" has the value "Vish"
+				environment name: "FIRSTNAME", value: "Vish"
 			}
 			
 			steps{
-				sh "echo the branch is not master" 
+				sh "echo the branch is not master"
+				sh "echo FIRSTNAME has Vish as value"
 			}
 			
+			/*
 			when{
 				// check the environment variable "FIRSTNAME" has the value "Vish"
 				environment name: "FIRSTNAME", value: "Vish"
@@ -88,6 +95,7 @@ pipeline{
 			steps{
 				sh "echo FIRSTNAME has Vish as value" 
 			}
+			*/
 		    }
 		
 		    stage('stage-parallel'){
