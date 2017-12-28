@@ -80,8 +80,13 @@ pipeline{
 				sh "echo the branch is not master" 
 			}
 			
+			when{
+				// check the environment variable "FIRSTNAME" has the value "Vish"
+				environment name: "FIRSTNAME", value: "Vish"
+			}
+			
 			steps{
-				sh "echo After when block this is the second steps block" 
+				sh "echo FIRSTNAME has Vish as value" 
 			}
 		    }
 		
