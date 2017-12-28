@@ -73,11 +73,11 @@ pipeline{
 				/* One and only-one condition is allowed */
 				
 				// Check the branch is master
-				branch "master"
+				branch "not-master"
 			}
 			
 			steps{
-				sh "echo the branch is master only" 
+				sh "echo the branch is not master" 
 			}
 		    }
 		
