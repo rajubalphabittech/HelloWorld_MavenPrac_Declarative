@@ -56,14 +56,17 @@ pipeline{
 			    }
 		    }
 
-			    stage("stage3"){
-				    steps{
-					    timeout(time: 3, unit: 'MINUTES'){
-						    // Print Hello to a samp.txt file
-						    sh 'echo "Hello..I am going to a Hello.txt file" > Hello.txt'
-					    }
+		    stage("stage3"){
+			    /* overriding globally defined agent */
+			    agent{ docker 'ubuntu:latest' }
+			    
+			    steps{
+				    timeout(time: 3, unit: 'MINUTES'){
+					    // Print Hello to a samp.txt file
+					    sh 'echo "Hello..I am going to a Hello.txt file" > Hello.txt'
 				    }
 			    }
+		    }
 		
 		    stage('stage-parallel'){
 			steps{
