@@ -85,7 +85,7 @@ pipeline{
 				
 				//Expressions. Only run if the expression doesn't return false/null.
 				expression{
-					return 3>2
+					return 3<2
 				}
 			}
 			
