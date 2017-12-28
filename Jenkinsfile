@@ -41,7 +41,10 @@ pipeline{
 	
 	stages{
 		    stage("stage1"){
-			    //stage block should contain one and only one steps block
+			    /*
+			    stage block should contain one and only one steps block
+			    steps block contains the actual work of your stage.
+			    */
 			    steps{			    
 				// Printing using Shell
 				sh 'echo "Hello Shell"'
