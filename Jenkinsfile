@@ -69,7 +69,7 @@ pipeline{
 			    }
 		    }
 		
-		stage("stage4"){
+		    stage("stage4"){
 			/*
 			stage block should contain atmost one and only one when block. It shouldn't be located inside steps block.
 			*/
@@ -79,6 +79,11 @@ pipeline{
 				
 				// check the environment variable "FIRSTNAME" has the value "Vish"
 				environment name: "FIRSTNAME", value: "Vish"
+				
+				//Expressions. Only run if the expression doesn't return false/null.
+				expression{
+					return "foo"=="foo"
+				}
 			}
 			
 			steps{
