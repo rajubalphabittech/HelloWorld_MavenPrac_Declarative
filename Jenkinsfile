@@ -70,10 +70,10 @@ pipeline{
 		    }
 		
 		stage("stage4"){
-			//stage block should contain atmost one and only one when block. 
+			/*
+			stage block should contain atmost one and only one when block. It shouldn't be located inside steps block.
+			*/
 			when{
-				/* One and only-one condition is allowed */
-				
 				// Check the branch is master
 				branch "master"
 				
@@ -82,10 +82,6 @@ pipeline{
 			}
 			
 			steps{
-				when{
-						branch "master"
-					}
-				
 				sh "echo the branch is master"
 				sh "echo Environment variable, FIRSTNAME has Vish as value"
 			}			
@@ -112,7 +108,6 @@ pipeline{
 				    sh "mvn clean"
 			    }
 		    }
-			
 	}
 	
 	/*
@@ -127,4 +122,3 @@ pipeline{
 		changed{ echo "I run only if the build status of the current build is different from the previous build." }
 	}
 }
-
