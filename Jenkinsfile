@@ -133,9 +133,11 @@ pipeline{
 		changed{ echo "I run only if the build status of the current build is different from the previous build." }
 		always{	
 			echo "Hi there? I run always irrespective of the build status"
-			
-			/* Wipeout the workspace after every build */
-			deleteDir()		
 		}		
+	}
+	
+	optinos{
+		/* Wipeout the workspace after every build */
+			deleteDir()
 	}
 }
