@@ -139,6 +139,7 @@ pipeline{
 		}		
 	}
 	
+	/* The options directive is for configuration that applies to the whole job. */
 	options{
 		/* To keep only 2 builds at any time */
 		buildDiscarder(logRotator(numToKeepStr:'2'))
