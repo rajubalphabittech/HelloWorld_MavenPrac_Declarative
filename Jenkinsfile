@@ -136,8 +136,11 @@ pipeline{
 		}		
 	}
 	
-	optinos{
+	options{
 		/* Wipeout the workspace after every build */
 			deleteDir()
+		
+		/* To keep only 2 builds at any time */
+		buildDiscarder(logRotator(numToKeepStr:'2'))
 	}
 }
