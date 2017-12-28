@@ -94,6 +94,7 @@ pipeline{
 				sh "echo Environment variable, FIRSTNAME has Vish as value"
 				sh "echo expression satisfied"
 				
+				/* Keep trying this if it fails up to 5 times */
 				retry(5){
 					echo "--Attempted--"
 				}
@@ -103,10 +104,8 @@ pipeline{
 		    stage('stage-parallel'){
 			steps{
 				parallel (
-				phs1: { sh "echo p1; sleep 5s; echo phase1" },
-				phs2: { 
-					sh "echo p2; sleep 10s; echo phase2" 
-				}
+				firstBlock: { sh "echo p1; sleep 5s; echo first block of stage-parallel" },
+				secondBlock: { sh "echo p2; sleep 10s; echo second block of stage-parallel" }
 				)			
 			     }
 
