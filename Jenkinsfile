@@ -68,6 +68,19 @@ pipeline{
 			    }
 		    }
 		
+		stage("stage4"){
+			when{
+				/* One and only-one condition is allowed */
+				
+				// Check the branch is master
+				branch "master"
+			}
+			
+			steps{
+				sh "echo the branch is master only" 
+			}
+		    }
+		
 		    stage('stage-parallel'){
 			steps{
 				parallel (
