@@ -82,6 +82,10 @@ pipeline{
 			}
 			
 			steps{
+				when{
+						branch "master"
+					}
+				
 				sh "echo the branch is master"
 				sh "echo Environment variable, FIRSTNAME has Vish as value"
 			}			
@@ -92,9 +96,6 @@ pipeline{
 				parallel (
 				phs1: { sh "echo p1; sleep 5s; echo phase1" },
 				phs2: { 
-					when{
-						branch "master"
-					}
 					sh "echo p2; sleep 10s; echo phase2" 
 				}
 				)			
