@@ -76,9 +76,11 @@ pipeline{
 		    }
 		
 		    stage("stage4"){
+			/*
 			tools{
 				// Define the tools to be override the global tools defined.
 			}
+			*/
 			    
 			    
 			/*
@@ -151,5 +153,8 @@ pipeline{
 	options{
 		/* To keep only 2 builds at any time */
 		buildDiscarder(logRotator(numToKeepStr:'2'))
+		
+		/* Skipping the default SCM checkout */
+		skipDefaultCheckout()
 	}
 }
