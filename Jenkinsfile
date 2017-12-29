@@ -155,6 +155,6 @@ pipeline{
 		buildDiscarder(logRotator(numToKeepStr:'2'))
 		
 		/* Skipping the default SCM checkout */
-		skipDefaultCheckout()
+		// skipDefaultCheckout()// It stops the default checkout of the SCM repository.
 	}
 }
