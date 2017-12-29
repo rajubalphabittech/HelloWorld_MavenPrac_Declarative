@@ -156,5 +156,7 @@ pipeline{
 		
 		/* Skipping the default SCM checkout */
 		// skipDefaultCheckout()// It stops the default checkout of the SCM repository.
+		
+		timestamps()
 	}
 }
