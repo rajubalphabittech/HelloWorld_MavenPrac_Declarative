@@ -49,8 +49,8 @@ pipeline{
 				// Printing using Shell
 				sh "echo Hello Shell"
 				
-				// Printing using Batch
-				bat "echo Hello Batch"
+				/* Printing using Batch */
+				//bat "echo Hello Batch"
 			    }
 		    }
 
