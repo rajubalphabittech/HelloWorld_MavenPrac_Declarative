@@ -197,8 +197,8 @@ pipeline{
 			    steps{
 				    // archives the generated artifacts
 				    //archive "target/**/*"
-				    archive "target/site"
-				    archive "target/*.jar"
+				    //archive "target/site"
+				    archive "target/*.jar" "target/*.jacoco.exe" 
 			    }
 		    }
 		
