@@ -149,7 +149,6 @@ pipeline{
 			    steps{
 				    //Unit test the compiled code with Maven test target.
 				    sh "mvn test -DtestFailureIgnore=true"
-				    //junit '**/target/surefire-reports/*.xml'
 			    }	            
 	            }
 
@@ -181,10 +180,10 @@ pipeline{
 		
 		    stage('TestReport'){ 
 			    steps{
-				    /* With junit instruction, Test results are grabbed by Jenkins to track them, calculates trends, and report on them */
-				    //junit '**/target/surefire-reports/*.xml'
-				    
-				    echo "Hello"
+				    /* 
+				    "surefire-report:report-only" creates HTML reports from the existing unit test cases executed results. 
+				    */
+				    mvn surefire-report:report-only
 			    }
 		    }
 		
@@ -219,7 +218,11 @@ pipeline{
 		changed{ echo "I run only if the build status of the current build is different from the previous build." }
 		always{	
 			echo "Hi there? I run always irrespective of the build status"
-
+			
+			/* With junit instruction, Test results are grabbed by Jenkins to track them, calculates trends, and report on them */
+			junit '**/target/surefire-reports/*.xml'
+			
+			
 			/* Wipeout the workspace after every build */
 			//deleteDir()
 		}	
