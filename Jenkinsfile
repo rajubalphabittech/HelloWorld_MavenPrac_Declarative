@@ -132,34 +132,42 @@ pipeline{
 		    }
 		
 		    stage('Javadocs'){
-        	    //Generate javadocs for src code
-		    sh "mvn javadoc:javadoc"
-	            }
+			    steps{
+				    //Generate javadocs for src code
+				    sh "mvn javadoc:javadoc"
+			    }
+		    }
 
 	            stage('Compile'){
-		    //Compile code with Maven configured. M3 is the name given for Maven installation in Global Tool Configuration
-		    sh "mvn compile"
+			    steps{
+				    //Compile code with Maven configured. M3 is the name given for Maven installation in Global Tool Configuration
+				    sh "mvn compile"
+			    }
 	            }
 
 	            stage('Unit-tests'){
-	            //Unit test the compiled code with Maven test target.
-	            sh "mvn test -DtestFailureIgnore=true"
-
-	            //junit '**/target/surefire-reports/*.xml'
+			    steps{
+				    //Unit test the compiled code with Maven test target.
+				    sh "mvn test -DtestFailureIgnore=true"
+				    //junit '**/target/surefire-reports/*.xml'
+			    }	            
 	            }
 
 	            stage('Integration-tests'){
-	            //Integration test the compiled code with Maven integration-test target.
-	            sh "mvn integration-test"
+			    steps{
+				    //Integration test the compiled code with Maven integration-test target.
+				    sh "mvn integration-test"
+			    }
 	            }
 
 	            stage('StaticCodeAnalysis'){
-			    withSonarQubeEnv('sonarqube'){
-				    //Maven clean. M3 is the name given for Maven installation in Global Tool Configuration
-				    sh "mvn sonar:sonar -Dsonar.host.url=http://192.168.0.15:9000 -Dsonar.profile=vn_quality_profile1"
+			    steps{
+				    withSonarQubeEnv('sonarqube'){
+					    //Maven clean. M3 is the name given for Maven installation in Global Tool Configuration
+					    sh "mvn sonar:sonar -Dsonar.host.url=http://192.168.0.15:9000 -Dsonar.profile=vn_quality_profile1"
+				    }
 			    }
 		    }
-	//}
 	
 	/*
 	Post block shouldn't be in a separate stage. Lines of post block are logged. 
