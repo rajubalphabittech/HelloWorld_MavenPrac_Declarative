@@ -179,21 +179,21 @@ pipeline{
 			    }
 		    }
 		
-		    stage('stage-Test-Report'){ 
+		    stage('TestReport'){ 
 			    steps{
 				    //Generate test report
 				    sh "mvn surefire-report:report"
 			    }
 		    }
 		
-		    stage('stage-Maven-Package'){
+		    stage('MavenPackage'){
 			    steps{
 				    //Genarate package
 				    sh "mvn package"
 			    }
 		    }
 		
-		    stage('stage-Artifacts_archival'){
+		    stage('ArtifactsArchival'){
 			    steps{
 				    // archives the generated artifacts
 				    archiveArtifacts '**/target/*.jar'
