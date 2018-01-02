@@ -168,12 +168,14 @@ pipeline{
 				    }
 				    
 				    sleep time: 2, unit: 'MINUTES'
-				    /*timeout(time: 10, unit: 'MINUTES') {
-					    def qg = waitForQualityGate()
-					    if (qg.status != 'OK') {
-						    error "Pipeline aborted due to quality gate failure: ${qg.status}"
+				    timeout(time: 10, unit: 'MINUTES') {
+					    script{
+						    def qg = waitForQualityGate()
+						    if (qg.status != 'OK') {
+							    error "Pipeline aborted due to quality gate failure: ${qg.status}"
+						    }
 					    }
-				    }*/
+				    }
 			    }
 		    }
 		
