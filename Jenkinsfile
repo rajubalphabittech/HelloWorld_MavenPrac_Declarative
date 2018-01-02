@@ -196,7 +196,7 @@ pipeline{
 		    stage('ArtifactsArchival'){
 			    steps{
 				    // archives the generated artifacts
-				    archiveArtifacts '**/target/*.zip'
+				    archiveArtifacts '**/target/*.*'
 			    }
 		    }
 		
