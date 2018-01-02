@@ -183,7 +183,7 @@ pipeline{
 				    /* 
 				    "surefire-report:report-only" creates HTML reports from the existing unit test cases executed results. 
 				    */
-				    mvn surefire-report:report-only
+				    mvn "surefire-report:report-only"
 			    }
 		    }
 		
