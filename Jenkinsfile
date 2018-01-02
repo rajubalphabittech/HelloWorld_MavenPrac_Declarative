@@ -145,7 +145,7 @@ pipeline{
 			    }
 	            }
 
-	            stage('Unit-tests'){
+	            stage('UnitTests'){
 			    steps{
 				    //Unit test the compiled code with Maven test target.
 				    sh "mvn test -DtestFailureIgnore=true"
@@ -153,7 +153,7 @@ pipeline{
 			    }	            
 	            }
 
-	            stage('Integration-tests'){
+	            stage('IntegrationTests'){
 			    steps{
 				    //Integration test the compiled code with Maven integration-test target.
 				    sh "mvn integration-test"
@@ -182,7 +182,8 @@ pipeline{
 		    stage('TestReport'){ 
 			    steps{
 				    //Generate test report
-				    sh "mvn surefire-report:report"
+				    //sh "mvn surefire-report:report"
+				    //junit "target/surefire-reports/*.xml"
 			    }
 		    }
 		
