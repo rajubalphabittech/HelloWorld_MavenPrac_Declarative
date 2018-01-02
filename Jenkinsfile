@@ -167,33 +167,6 @@ pipeline{
 					    sh "mvn sonar:sonar -Dsonar.host.url=http://192.168.0.15:9000 -Dsonar.profile=vn_quality_profile1"
 				    }
 			    }
-		    }	
-		/*
-		Post block shouldn't be in a separate stage. Lines of post block are logged. 
-		Steps inside post blcok aren't displayed in the pipeline.
-		*/
-		post{		
-			success{ echo "I run only if the build is success." }
-			failure{ echo "I run only if the build is failed." }
-			unstable{ echo "I run only if the build is unstable." }		
-			changed{ echo "I run only if the build status of the current build is different from the previous build." }
-			always{	
-				echo "Hi there? I run always irrespective of the build status"
-
-				/* Wipeout the workspace after every build */
-				deleteDir()// Not working
-			}		
-		}
-	}
-
-		/* The options directive is for configuration that applies to the whole job. */
-		options{
-			/* To keep only 2 builds at any time */
-			buildDiscarder(logRotator(numToKeepStr:'2'))
-
-			/* Skipping the default SCM checkout */
-			// skipDefaultCheckout()// It stops the default checkout of the SCM repository.
-
-			timestamps()
+		    }
 		}
 }
