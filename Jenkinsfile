@@ -166,13 +166,13 @@ pipeline{
 					    //Maven clean. M3 is the name given for Maven installation in Global Tool Configuration
 					    sh "mvn sonar:sonar -Dsonar.host.url=http://192.168.0.15:9000 -Dsonar.profile=vn_quality_profile1"
 				    }
-			    }
-		   
-			    sleep time: 2, unit: 'MINUTES'
-			    timeout(time: 10, unit: 'MINUTES') {
-				    def qg = waitForQualityGate()
-				    if (qg.status != 'OK') {
-					    error "Pipeline aborted due to quality gate failure: ${qg.status}"
+				    
+				    sleep time: 2, unit: 'MINUTES'
+				    timeout(time: 10, unit: 'MINUTES') {
+					    def qg = waitForQualityGate()
+					    if (qg.status != 'OK') {
+						    error "Pipeline aborted due to quality gate failure: ${qg.status}"
+					    }
 				    }
 			    }
 		    }
