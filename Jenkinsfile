@@ -181,8 +181,10 @@ pipeline{
 		
 		    stage('TestReport'){ 
 			    steps{
-				    //Generate test report
-				    junit '**/target/surefire-reports/*.xml'
+				    /* With junit instruction, Test results are grabbed by Jenkins to track them, calculates trends, and report on them */
+				    //junit '**/target/surefire-reports/*.xml'
+				    
+				    echo Hello
 			    }
 		    }
 		
