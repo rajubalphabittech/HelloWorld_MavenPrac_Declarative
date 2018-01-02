@@ -193,12 +193,14 @@ pipeline{
 			    }
 		    }
 		
-		    stage('ArtifactsArchival'){
+		   /*
+		   stage('ArtifactsArchival'){
 			    steps{
 				    // archives the generated artifacts
 				    archiveArtifacts '**/target/*.jar'
 			    }
 		    }
+		    */
 	}
 		
 	/*
