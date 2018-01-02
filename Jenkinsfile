@@ -184,6 +184,7 @@ pipeline{
 				deleteDir()// Not working
 			}		
 		}
+	}
 
 		/* The options directive is for configuration that applies to the whole job. */
 		options{
@@ -195,5 +196,4 @@ pipeline{
 
 			timestamps()
 		}
-	}
 }
