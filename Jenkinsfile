@@ -169,9 +169,7 @@ pipeline{
 			    }
 		    }
 		
-		////////////
-		
-		    /*stage("Quality Gate"){
+		    stage("QualityGate"){
 			    steps{
 				    sleep time: 5, unit: 'MINUTES'
 				    timeout(time: 10, unit: 'MINUTES') {
@@ -181,7 +179,7 @@ pipeline{
 					    }
 				    }
 			    }
-		    }*/
+		    }
 		
 		    stage('stage-Test-Report'){ 
 			    steps{
