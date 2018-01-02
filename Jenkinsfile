@@ -168,5 +168,44 @@ pipeline{
 				    }
 			    }
 		    }
+		
+		////////////
+		
+		    stage("Quality Gate"){
+			    steps{
+				    sleep time: 5, unit: 'MINUTES'
+				    timeout(time: 10, unit: 'MINUTES') {
+					    def qg = waitForQualityGate()
+					    if (qg.status != 'OK') {
+						    error "Pipeline aborted due to quality gate failure: ${qg.status}"
+					    }
+				    }
+			    }
+		    }
+		
+		    stage('stage-Test-Report'){ 
+			    steps{
+				    //Generate test report
+				    sh "mvn surefire-report:report"
+			    }
+		    }
+		
+		    stage('stage-Maven-Package'){
+			    steps{
+				    //Genarate package
+				    sh "mvn package"
+			    }
+		    }
+		
+		    stage('stage-Artifacts_archival'){
+			    steps{
+				    // archives the generated artifacts
+				    archiveArtifacts '**/target/*.jar'
+			    }
+		    }
+		
+		////////////
+		
+		
 		}
 }
