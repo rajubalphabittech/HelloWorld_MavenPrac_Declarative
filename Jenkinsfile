@@ -198,7 +198,8 @@ pipeline{
 				    // archives the generated artifacts
 				    //archive "target/**/*"
 				    //archive "target/site"
-				    archive "target/*.jar" "target/*.jacoco.exe" 
+				    archive "target/*.jar"
+				    archive "target/*.exe"
 			    }
 		    }
 		
