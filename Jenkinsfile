@@ -182,9 +182,7 @@ pipeline{
 		    stage('TestReport'){ 
 			    steps{
 				    //Generate test report
-				    //sh "mvn surefire-report:report"
-				    //junit "target/surefire-reports/*.xml"
-				    echo "Hello"
+				    junit "target/surefire-reports/*.xml"
 			    }
 		    }
 		
