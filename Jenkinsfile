@@ -167,7 +167,7 @@ pipeline{
 					    sh "mvn sonar:sonar -Dsonar.host.url=http://192.168.0.15:9000 -Dsonar.profile=vn_quality_profile1"
 				    }
 				    
-				    sleep time: 2, unit: 'MINUTES'
+				    sleep time: 30, unit: 'SECONDS'
 				    timeout(time: 10, unit: 'MINUTES') {
 					    script{
 						    def qg = waitForQualityGate()
@@ -196,8 +196,9 @@ pipeline{
 		    stage('ArtifactsArchival'){
 			    steps{
 				    // archives the generated artifacts
-				    //archiveArtifacts '**/target/*'
-				    archive "target/**/*"
+				    //archive "target/**/*"
+				    archive "target/site"
+				    archive "target/*.jar"
 			    }
 		    }
 		
