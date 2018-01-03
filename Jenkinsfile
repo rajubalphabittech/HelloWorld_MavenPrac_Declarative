@@ -61,6 +61,19 @@ pipeline{
 				 echo "Version is:  ${VERSION}"
 				 echo "Full Name: ${FULLNAME}"
 			    }
+			    
+			    script{
+				    /*
+				    Check OS is Unix or not?
+				    */
+				    if(isUnix()){
+					    echo "You are running on Unix OS"
+				    }
+				    
+				    else{
+					    echo "You are not running on Unix OS"
+				    }
+			    }
 		    }
 
 		    stage("stage3"){
