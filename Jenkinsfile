@@ -183,7 +183,7 @@ pipeline{
 				    /* 
 				    "surefire-report:report-only" creates HTML reports from the existing unit test cases executed results. 
 				    */
-				    mvn "surefire-report:report-only"
+				    sh "mvn surefire-report:report-only"
 			    }
 		    }
 		
@@ -197,14 +197,10 @@ pipeline{
 		    stage('ArtifactsArchival'){
 			    steps{
 				    // archives the generated artifacts
-				    //archive "target/**/*"
-				    //archive "target/site"
-				    archive "target/*.jar"
 				    archive "target/*.exe"
+				    echo "Hi"
 			    }
 		    }
-		
-		   
 	}
 		
 	/*
@@ -220,7 +216,7 @@ pipeline{
 			echo "Hi there? I run always irrespective of the build status"
 			
 			/* With junit instruction, Test results are grabbed by Jenkins to track them, calculates trends, and report on them */
-			junit '**/target/surefire-reports/*.xml'
+			junit "target/surefire-reports/*.xml"
 			
 			
 			/* Wipeout the workspace after every build */
