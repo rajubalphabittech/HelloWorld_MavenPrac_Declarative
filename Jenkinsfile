@@ -220,7 +220,7 @@ pipeline{
 		    }
 		
 		stage('ArtifactUpload'){
-			steps{
+			//steps{
 				nexusArtifactUploader {
 					nexusVersion('nexus3')
 					protocol('http')
@@ -236,7 +236,7 @@ pipeline{
 					    file('HW_Maven-1.0.jar')
 					}
 				}
-			}
+			//}
 		}
 	}
 		
