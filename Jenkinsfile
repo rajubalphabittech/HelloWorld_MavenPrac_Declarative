@@ -196,9 +196,10 @@ pipeline{
 		
 		    stage('ArtifactsArchival'){
 			    steps{
-				    // archives the generated artifacts
-				    archive "target/*.jar"
-				    echo "Hi"
+				    /* 
+				    With archive inctruction, mentioned file/s will be displyed in jenkins to download
+				    */
+				    archive "target/*.jar" "target/*.exec"
 			    }
 		    }
 	}
