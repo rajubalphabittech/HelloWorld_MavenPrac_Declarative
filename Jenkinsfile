@@ -222,7 +222,7 @@ pipeline{
 			
 			
 			/* Wipeout the workspace after every build */
-			deleteDir()
+			//deleteDir()
 		}	
 	}
 }
