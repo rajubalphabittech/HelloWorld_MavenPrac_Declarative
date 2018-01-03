@@ -199,7 +199,7 @@ pipeline{
 				    /* 
 				    With archive inctruction, mentioned file/s will be displyed in jenkins to download
 				    */
-				    archive "target/*.jar" "target/*.exec"
+				    archive "target/*.jar", "target/*.exec"
 			    }
 		    }
 	}
