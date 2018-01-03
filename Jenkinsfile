@@ -60,9 +60,8 @@ pipeline{
 				 echo 'Hello...This message is printed using default Sample Step in Pipeline Script generator'
 				 echo "Version is:  ${VERSION}"
 				 echo "Full Name: ${FULLNAME}"
-			    }
-			    
-			    script{
+				 
+				 script{
 				    /*
 				    Check OS is Unix or not?
 				    */
@@ -73,6 +72,7 @@ pipeline{
 				    else{
 					    echo "You are not running on Unix OS"
 				    }
+				 }
 			    }
 		    }
 
