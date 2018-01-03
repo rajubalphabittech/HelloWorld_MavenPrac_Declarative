@@ -197,7 +197,7 @@ pipeline{
 		    stage('ArtifactsArchival'){
 			    steps{
 				    // archives the generated artifacts
-				    archive "target/*.exe"
+				    archive "target/*.jar"
 				    echo "Hi"
 			    }
 		    }
