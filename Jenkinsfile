@@ -198,8 +198,9 @@ pipeline{
 			    steps{
 				    /* 
 				    With archive inctruction, mentioned file/s will be displyed in jenkins to download
+				    Multiple artifacts not working. Need to look.
 				    */
-				    archive "target/*.jar", archive "target/*.exec"
+				    archive "target/*.jar"
 			    }
 		    }
 	}
@@ -221,7 +222,7 @@ pipeline{
 			
 			
 			/* Wipeout the workspace after every build */
-			//deleteDir()
+			deleteDir()
 		}	
 	}
 }
