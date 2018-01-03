@@ -172,6 +172,7 @@ pipeline{
 			    }
 	            }
 
+		    /* Commented temporarily
 	            stage('StaticCodeAnalysis'){
 			    steps{
 				    withSonarQubeEnv('sonarqube'){
@@ -190,6 +191,7 @@ pipeline{
 				    }
 			    }
 		    }
+		    */
 		
 		    stage('TestReport'){ 
 			    steps{
