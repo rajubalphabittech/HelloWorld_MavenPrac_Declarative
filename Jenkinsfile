@@ -238,6 +238,7 @@ pipeline{
 				}
 			}
 		}
+	}
 		
 	/*
 	Post block shouldn't be in a separate stage. Lines of post block are logged. 
