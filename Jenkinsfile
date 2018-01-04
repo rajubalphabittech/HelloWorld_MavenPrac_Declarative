@@ -224,7 +224,7 @@ pipeline{
 				nexusArtifactUploader(
 					nexusVersion: 'nexus3',
 					protocol: 'http',
-					nexusUrl: 'http://192.168.0.15:8081',
+					nexusUrl: '192.168.0.15:8081',
 					groupId: 'Prac2',
 					version: '1.0',
 					repository: 'maven-releases',
