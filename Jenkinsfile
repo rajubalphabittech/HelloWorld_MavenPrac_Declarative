@@ -233,7 +233,7 @@ pipeline{
 					    [artifactId: 'HW_Maven',
 					    type: 'jar',
 					    file: 'HW_Maven-1.0.jar',
-					    classifier: '']				    
+					    classifier: 'target']				    
 					]
 				)
 			}
