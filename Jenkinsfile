@@ -238,7 +238,7 @@ pipeline{
 					artifacts: [
 					    [artifactId: 'myartifact',
 					    type: 'jar',
-					    classifier: 'target',
+					    //classifier: '',
 					    file: 'target/HW_Maven-1.0.jar']				    
 					]
 				)
