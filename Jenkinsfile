@@ -219,6 +219,11 @@ pipeline{
 			    }
 		    }
 		////////////////////
+		/*
+		Artifact uploading to Nexus for non-maven based projects. You can use for Maven projects also, but the generated artifact
+		should be in the workspace's job root directory. 
+		Install "Nexus Artifact Uploader" in Jenkins otherwise Jenkins throws error.
+		*/
 		stage('ArtifactUpload'){
 			steps{
 				nexusArtifactUploader(
