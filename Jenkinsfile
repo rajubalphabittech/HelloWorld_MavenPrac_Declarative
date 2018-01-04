@@ -220,8 +220,8 @@ pipeline{
 		    }
 		
 		stage('ArtifactUpload'){
-			//steps{
-				nexusArtifactUploader {
+			steps{
+				nexusArtifactUploader (
 					nexusVersion('nexus3')
 					protocol('http')
 					nexusUrl('http://192.168.0.15:8081')
@@ -234,9 +234,9 @@ pipeline{
 					    type('jar')
 					    classifier('debug')
 					    file('HW_Maven-1.0.jar')
-					}
+					)
 				}
-			//}
+			}
 		}
 	}
 		
