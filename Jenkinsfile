@@ -222,6 +222,7 @@ pipeline{
 		/*
 		Artifact uploading to Nexus for non-maven based projects. You can use for Maven projects also, but the generated artifact
 		should be in the workspace's job root directory. 
+		
 		Install "Nexus Artifact Uploader" in Jenkins otherwise Jenkins throws error.
 		*/
 		stage('ArtifactUpload'){
@@ -230,16 +231,15 @@ pipeline{
 					nexusVersion: 'nexus3',
 					protocol: 'http',
 					nexusUrl: '192.168.0.15:8081',
-					groupId: 'Prac2',
+					groupId: 'MyGroup',
 					version: '1.0',
 					repository: 'maven-releases',
 					credentialsId: 'Nexus-3.7',
 					artifacts: [
-					    [artifactId: 'HW_Maven',
+					    [artifactId: 'myartifact',
 					    type: 'jar',
 					    classifier: 'target',
-					    file: 'HW_Maven-1.0.jar'
-					    ]				    
+					    file: 'HW_Maven-1.0.jar']				    
 					]
 				)
 			}
