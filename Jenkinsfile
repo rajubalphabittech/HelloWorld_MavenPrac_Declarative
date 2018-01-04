@@ -218,26 +218,27 @@ pipeline{
 				    archive "target/*.jar"
 			    }
 		    }
-		
+		////////////////////
 		stage('ArtifactUpload'){
 			steps{
-				nexusArtifactUploader {
-					nexusVersion('nexus3')
-					protocol('http')
-					nexusUrl('http://192.168.0.15:8081')
-					groupId('mygroup')
-					version('1.0')
-					repository('maven-releases')
-					credentialsId('Nexus-3.7')
-					artifact {
-					    artifactId('HW_Maven')
-					    type('jar')
-					    file('HW_Maven-1.0.jar')
-					    classifier('debug')					    
-					}
-				}
+				nexusArtifactUploader(
+					nexusVersion: 'nexus3',
+					protocol: 'http',
+					nexusUrl: 'http://192.168.0.15:8081',
+					groupId: 'mygroup',
+					version: '1.0',
+					repository: 'maven-releases',
+					credentialsId: 'Nexus-3.7',
+					artifacts: [
+					    [artifactId: 'HW_Maven',
+					    type: 'jar',
+					    file: 'HW_Maven-1.0.jar',
+					    classifier: '']				    
+					]
+				)
 			}
 		}
+		///////////////////
 	}
 		
 	/*
