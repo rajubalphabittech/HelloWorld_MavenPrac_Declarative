@@ -232,8 +232,8 @@ pipeline{
 					artifact {
 					    artifactId('HW_Maven')
 					    type('jar')
-					    classifier('debug')
 					    file('HW_Maven-1.0.jar')
+					    classifier('debug')					    
 					}
 				}
 			}
