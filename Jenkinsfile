@@ -225,7 +225,7 @@ pipeline{
 					nexusVersion: 'nexus3',
 					protocol: 'http',
 					nexusUrl: 'http://192.168.0.15:8081',
-					groupId: 'mygroup',
+					groupId: 'Prac2',
 					version: '1.0',
 					repository: 'maven-releases',
 					credentialsId: 'Nexus-3.7',
